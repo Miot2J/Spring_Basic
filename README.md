@@ -70,7 +70,12 @@
 
 10.@DisplayName : 실행시 지정된 메세지를 출력해준다.
 
-11.@Scope: default 는 singleton 이며 현재 package에선 prototype 으로 설정 해보기 위해 사용한다 
+11.@Scope: default 는 singleton 이며 현재 package에선 prototype 으로 설정 해보기 위해 사용한다
++ @Scope(value = "request",proxyMode = ScopedProxyMode.TARGET_CLASS):
+  proxyMode = ScopedProxyMode.TARGET_CLASS
+  적용 대상이 인터페이스가 아닌 클래스면 TARGET_CLASS 를 선택
+  적용 대상이 인터페이스면 INTERFACES 를 선택
+
 
 12.@PostConstruct : Bean lifecycle에선  Bean 생성 후 초기화 작업 전에 실행된다.
 
@@ -100,3 +105,29 @@
 3.@Setter : Setter method를 선언 안하고 get 사용가능
 
 4.@ToString : ToString method를 선언 안하고 get 사용가능
+
+------
+
+###< 웹 스코프 >
+
+#### 특징
++ 웹 환경에서만 동작
++ 프로토 타입과 달리 스프링이 해당 스코프의 종료시점까지 관리한다. 따라서 종료 메서드 호출
+
+#### 종류
+
++ Request : Http 요청 하나가 들어오고 나갈 때 까지 유지된다. Http 요청마다 별도의 빈 인스턴스 생성
+
++ Session : Http Session과 동일한 생명 주기 가진다.
+
++ Application : Servlet Context와 동일한 생명 주기 가진다.
+
++ Websocket : Web Socket과 동일한 생명주기 가진다.
+
+-------------
+###< Provider >
+
++ DL을 위해 사용한다 
+  
++ ObjectProvider 덕분에 ObjectProvider.getObject() 를 호출하는 시점까지 request scope 빈의
+  생성을 지연할 수 있다. in LogDemoController.class , LogDemoService.class
