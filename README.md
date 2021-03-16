@@ -2,7 +2,7 @@
 ###스프링의 기본개념과 객체지향적 코드를 학습하고 기록하기 위한 repo입니다.
 
 ###  <java Folder 코드 작성 과정>
-#####SOLID(좋은 객체지향 5원칙) 지키기 위한 코드를 작성해 보았다
+##### SOLID(좋은 객체지향 5원칙) 지키기 위한 코드를 작성해 보았다
 1.Discount 인터페이스 생성 후 2개의 정책 클래스(Fix DC, Rate DC) 작성
 
 2.Order 인터페이스 생성 후 주문 클래스 작성
@@ -18,7 +18,7 @@
 6.LomBok으로 setter getter toString 사용 코드 작성
 
 ------------
-###<Test Folder 코드 작성 과정>
+### <Test Folder 코드 작성 과정>
 
 1. singleton Package :
     + 패턴이 없는 StatefulService 코드 작성
@@ -48,7 +48,7 @@
 8. scan Package: Bean을 찾기 위한 @ComponentScan시 @Filter를 이용하여 필터링할 Bean 선택 (직접 만든 Annotation @ 사용 )
 
 ---------
-###< 사용 Annotation >
+### < 사용 Annotation >
 1.@Component
 
 2.@Qualifier("fixDiscountPolicy") : default 값은 클래스 첫 글자만 소문자로 변경한 것
@@ -97,7 +97,7 @@
 
 
 
-###< LomBok Library >
+### < LomBok Library >
 1.@RequiredArgsConstructor : 클래스내의 final 붙은 변수를 가지고 생성자 자동 실행해줌 (생성자 선언 불필요)
 
 2.@Getter : Getter method를 선언 안하고 get 사용가능
@@ -108,7 +108,7 @@
 
 ------
 
-###< 웹 스코프 >
+### < 웹 스코프 >
 
 #### 특징
 + 웹 환경에서만 동작
@@ -125,7 +125,7 @@
 + Websocket : Web Socket과 동일한 생명주기 가진다.
 
 -------------
-###< Provider >
+### < Provider >
 
 + DL을 위해 사용한다 
   
